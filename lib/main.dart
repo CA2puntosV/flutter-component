@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: 'Material App',
       initialRoute: '/',
       routes: {
@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
         'listview2' : (_) => const ListView2Screen(),
         'alert'     : (_) => const AlertScreen(),
         'card'      : (_) => const CardScreen(),
+      },
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => const AlertScreen(),
+        );
       },
     );
   }
