@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
               */
             },
           ),
+          // We can use _ or __ for the properties that we're not using at the moment
           separatorBuilder: (_, __) => const Divider(),
         ),
       ),
