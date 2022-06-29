@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:components/router/screens.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,12 +14,19 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
         ),
         body: ListView.separated(
-          itemCount: 5,
+          itemCount: AppRoutes.menuOptions.length,
           itemBuilder: (ctx, i) => ListTile(
-            title: const Text('Route Name'),
-            leading: const Icon(Icons.alarm_add),
+            title: Text(
+              AppRoutes.menuOptions[i].name,
+            ),
+            leading: Icon(
+              AppRoutes.menuOptions[i].icon,
+            ),
             onTap: () {
-              Navigator.pushNamed(context, 'card');
+              Navigator.pushNamed(
+                context,
+                AppRoutes.menuOptions[i].route,
+              );
 
               /* With MaterialPageRoute we can custom the transitions and have complete control over
               final route = MaterialPageRoute(
