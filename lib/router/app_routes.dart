@@ -43,13 +43,27 @@ class AppRoutes {
     ),
   ];
 
+  static Map<String, Widget Function(BuildContext)> getMenuRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    for (final MenuOption option in menuOptions) {
+      appRoutes.addAll(
+        {option.route: (_) => option.screen},
+      );
+    }
+
+    return appRoutes;
+  }
+
+/*  This is helpful when we are using our routes without icons,
+    names or more properties
   static Map<String, Widget Function(BuildContext)> routes = {
-    'home': (BuildContext context) => const HomeScreen(),
+    'home'     : (BuildContext context) => const HomeScreen(),
     'listview1': (BuildContext context) => const ListView1Screen(),
     'listview2': (BuildContext context) => const ListView2Screen(),
-    'alert': (BuildContext context) => const AlertScreen(),
-    'card': (BuildContext context) => const CardScreen(),
-  };
+    'alert'    : (BuildContext context) => const AlertScreen(),
+    'card'     : (BuildContext context) => const CardScreen(),
+  }; */
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
