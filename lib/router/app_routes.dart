@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:components/models/models.dart';
-import 'package:components/router/screens.dart';
+import 'package:components/screens/screens.dart';
 
 class AppRoutes {
   //static members are methods and properties that can be accessed
